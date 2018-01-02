@@ -42,6 +42,7 @@ python3 titaniumLite/titaniumLite.py # To execute commands
 * **Durga Akhil Mundroy** - [akhilmd](https://github.com/akhilmd)
 * **Ganesh K.** - [DarkFate13](https://github.com/DarkFate13)
 * **Harsh Garg** - [HARSHGARG76](https://github.com/HARSHGARG76)
+* **Rahul R Bharadwaj** - [Rahul-RB](https://github.com/Rahul-RB)
 
 
 ### Timeline: ###

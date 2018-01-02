@@ -64,7 +64,6 @@ void run_python() {
 			// printf("Hello message sent\n");
 			
 		}
-		return 0;
 		
     }
 }

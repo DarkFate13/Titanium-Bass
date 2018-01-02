@@ -6,6 +6,8 @@ apt-get install g++ -y
 apt-get install libboost-all-dev -y
 apt-get install libreadline6 libreadline6-dev -y
 apt-get install python3-pandas -y
+apt-get install bison -y
+apt-get install flex -y
 # apt-get install clang # Optional and will be prompted
 
 
