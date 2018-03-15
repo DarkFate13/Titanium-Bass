@@ -3,10 +3,10 @@
 
 void run_db() {
 	typedef struct yy_buffer_state * YY_BUFFER_STATE;
-    YY_BUFFER_STATE  bp;
-    
+	YY_BUFFER_STATE  bp;
+	
 	init_globals();
-    while (1) {
+	while (1) {
 		
 		
 		char *prompt = prompt_create(dname);
@@ -16,33 +16,33 @@ void run_db() {
 		if(!line || !strcmp(line, "exit;")) 
 			break;
 		
-        if(*line) 
+		if(*line) 
 			add_history(line);
 		
 		strcat(line, "\n"); /* grammar requires EOL */
 		
 		bp = yy_scan_string(line);
-        yy_switch_to_buffer(bp);
+		yy_switch_to_buffer(bp);
 		
-        yyparse();
+		yyparse();
 		
-        yy_flush_buffer(bp);
-        yy_delete_buffer (bp);
+		yy_flush_buffer(bp);
+		yy_delete_buffer (bp);
 		
 		free(line);
 		free(prompt);
 		
-    }
+	}
 	
 	// calc_c_cpp_close(calc);
 }
 
 void run_python() {
 	typedef struct yy_buffer_state * YY_BUFFER_STATE;
-    YY_BUFFER_STATE  bp;
-    
+	YY_BUFFER_STATE  bp;
+	
 	init_globals();
-    while (1) {
+	while (1) {
 		
 		int new_socket = sock_create();
 		
@@ -65,27 +65,27 @@ void run_python() {
 			
 		}
 		
-    }
+	}
 }
 
 void mode_select(char** args, int no_of_args) {
-    int i = 0;
-    char ptr[10];
-    
-    if(no_of_args == 0) {
-        run_db();
-    }
-    
-    else if(!strcmp(args[0], "-p")) {
-        run_python();  
-    }
+	int i = 0;
+	char ptr[10];
+	
+	if(no_of_args == 0) {
+		run_db();
+	}
+	
+	else if(!strcmp(args[0], "-p")) {
+		run_python();  
+	}
 }
 
 int main(int argl, char **argv) {
-    
+	
 	mode_select(argv + 1, argl - 1);
-    
-    return 0;
-    
+	
+	return 0;
+	
 }
 
